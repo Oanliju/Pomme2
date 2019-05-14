@@ -74,7 +74,7 @@ async def non(ctx):
 @bot.command(pass_context=True)
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
-    ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion"]
+    ml = ["vent", "vent lvl 10", "vent lvl 100000", "[Tornade](https://tenor.com/y3v2.gif)", "Cyclone", "tourbillion"]
     await ctx.message.channel.send(random.choice(ml))
 
 
