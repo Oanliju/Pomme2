@@ -76,9 +76,7 @@ async def coucou(ctx):
     await ctx.message.channel.purge(limit=1)
     e3 = discord.Embed(title="COUCOU", description="Tout le monde", colour=discord.Colour.greyple())
     await ctx.message.channel.send(embed=e3)
-    e = discord.Reaction
-    e.emoji = ":wave:"
-    e.message = e3
+    
 
 @bot.command(pass_context=True)
 async def pdp(ctx):
@@ -128,7 +126,7 @@ async def nick(ctx, arg):
 @bot.command(pass_context=True)
 async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    if ctx.author.guild_permissions.send_message:
+    if ctx.message.author.guild_permissions.send_message:
         emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
         await ctx.message.channel.send(embed=emc)
 
