@@ -133,7 +133,7 @@ async def nick(ctx, arg):
 async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.send_messages:
-        emc = discord.Embed(description=arg, color=discord.Colour.dark_green())
+        emc = discord.Embed(description="**" + arg + "**", color=discord.Colour.dark_green())
         emc.set_author(name=ctx.message.author.name, icon_url=ctx.author.avatar_url)
         await ctx.message.channel.send(embed=emc)
 
