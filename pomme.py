@@ -122,7 +122,7 @@ async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.send_messages:
         emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
-        emc.set_author(name=ctx.message.author.name)
+        emc.set_author(name=ctx.message.author.name, icon_url=ctx.author.avatar_url)
         await ctx.message.channel.send(embed=emc)
 
 
@@ -214,7 +214,7 @@ async def vent(ctx, arg):
 @bot.command(pass_context=True)
 async def test(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    await ctx.message.chnnal.send("test")
+    await ctx.message.channel.send("test")
 
 
 bot.run(os.getenv('TOKEN'))
