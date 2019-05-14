@@ -211,4 +211,10 @@ async def vent(ctx, arg):
     await ctx.message.channel.send(embed=random.choice(ml))
 
 
+@bot.command(pass_context=True)
+async def test(ctx, arg):
+    await ctx.message.channel.purge(limit=1)
+    await ctx.message.chnnal.send("test")
+
+
 bot.run(os.getenv('TOKEN'))
