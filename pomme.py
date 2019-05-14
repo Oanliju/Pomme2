@@ -76,7 +76,9 @@ async def coucou(ctx):
     await ctx.message.channel.purge(limit=1)
     e3 = discord.Embed(title="COUCOU", description="Tout le monde", colour=discord.Colour.greyple())
     await ctx.message.channel.send(embed=e3)
-
+    e = discord.Reaction
+    e.emoji = ":wave:"
+    e.message = e3
 
 @bot.command(pass_context=True)
 async def pdp(ctx):
