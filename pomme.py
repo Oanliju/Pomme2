@@ -109,9 +109,9 @@ async def clean(ctx, arg):
         if len(arg) > 0 and arg.isdigit:
             await ctx.message.channel.purge(limit=int(arg)+1)
             if int(arg) <= 1:
-                await ctx.message.channel.send(arg + " Message a été suprimé", delete_after=3)
+                await ctx.message.channel.send(arg + " Message a été supprimé", delete_after=3)
             else:
-                await ctx.message.channel.send(arg + " Messages ont été Suprimés", delete_after=3)
+                await ctx.message.channel.send(arg + " Messages ont été supprimés", delete_after=3)
         else:
             await ctx.message.channel.send("Un nombre pas des lettres")
     else:
