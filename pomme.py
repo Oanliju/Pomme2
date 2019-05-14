@@ -75,7 +75,7 @@ async def non(ctx):
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
     ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion"]
-    await ctx.message.channel.send(embed=random.choice(ml))
+    await ctx.message.channel.send(random.choice(ml))
 
 
 @bot.command(pass_context=True)
