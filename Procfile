@@ -1,1 +1,1 @@
-worker: py -3 pomme.py
+worker: py pomme.py
