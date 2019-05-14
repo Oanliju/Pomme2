@@ -119,9 +119,8 @@ async def nick(ctx, arg):
 @bot.command(pass_context=True)
 async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    if ctx.message.author.guild_permissions.send_message:
-        emc = discord.Embed(title=arg[0], color=discord.Colour.dark_green())
-        await ctx.message.channel.send(embed=emc)
+    emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
+    await ctx.message.channel.send(embed=emc)
 
 
 @bot.command(pass_context=True)
@@ -200,11 +199,6 @@ async def youtube(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     e = discord.Embed(title="Voici votre recherche Youtube " + ctx.author.name + " : " + arg, description="[Youtube](https://www.youtube.com/results?search_query=" + arg + ")", colour=discord.Colour.dark_red())
     await ctx.message.channel.send(embed=e)
-
-
-@bot.command(pass_context=True)
-async def test(ctx, arg):
-    await ctx.message.channel.send(arg)
     
 
 bot.run(os.getenv('TOKEN'))
