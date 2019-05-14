@@ -9,7 +9,7 @@ bot.remove_command(name="help")
 @bot.event
 async def on_ready():
     print("PoDeTer a la pêche")
-    await bot.change_presence(activity=discord.Game(name="V1 | =help"))
+    await bot.change_presence(activity=discord.Game(name="V1.2 | =help"))
 
 
 @bot.command(pass_context=True)
