@@ -202,4 +202,9 @@ async def youtube(ctx, arg):
     await ctx.message.channel.send(embed=e)
 
 
+@bot.command(pass_context=True)
+async def test(ctx, arg):
+    await ctx.message.channel.send(arg)
+    
+
 bot.run(os.getenv('TOKEN'))
