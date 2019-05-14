@@ -79,10 +79,11 @@ async def vent(ctx, arg):
 
 
 @bot.command(pass_context=True)
-async def test(ctx, arg):
+async def test(ctx):
     await ctx.message.channel.purge(limit=1)
     await ctx.message.channel.send("test")
 
+    
 @bot.command(pass_context=True)
 async def coucou(ctx):
     await ctx.message.channel.purge(limit=1)
