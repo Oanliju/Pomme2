@@ -71,6 +71,14 @@ async def non(ctx):
     e4 = discord.Embed(title="Non", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
+
+@bot.command(pass_context=True)
+async def Ah(ctx):
+    await ctx.message.channel.purge(limit=1)
+    e4 = discord.Embed(title="Ah", description=":AH::AH::AH:"colour=discord.Colour.dark_blue())
+    await ctx.message.channel.send(embed=e4)
+
+
 @bot.command(pass_context=True)
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
