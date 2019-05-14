@@ -208,8 +208,7 @@ async def youtube(ctx, arg):
 async def vent(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion"]
-    emc = discord.Embed(title=random.choice(ml), color=discord.Colour.dark_green())
-    await ctx.message.channel.send(embed=emc)
+    await ctx.message.channel.send(embed=random.choice(ml))
 
 
 bot.run(os.getenv('TOKEN'))
