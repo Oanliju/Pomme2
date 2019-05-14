@@ -9,7 +9,7 @@ bot.remove_command(name="help")
 @bot.event
 async def on_ready():
     print("PoDeTer a la pêche")
-    await bot.change_presence(activity=discord.Game(name="V1 | =help"))
+    await bot.change_presence(activity=discord.Game(name="V1.2 | =help"))
 
 
 @bot.command(pass_context=True)
@@ -120,8 +120,8 @@ async def nick(ctx, arg):
 async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.send_message:
-        emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
-        await ctx.message.channel.send(arg)
+        emc = discord.Embed(title=arg[0], color=discord.Colour.dark_green())
+        await ctx.message.channel.send(embed=emc)
 
 
 @bot.command(pass_context=True)
