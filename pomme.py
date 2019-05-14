@@ -108,7 +108,7 @@ async def clean(ctx, arg):
 @bot.command(pass_context=True)
 async def nick(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    if ctx.author.guild_permissions.administrator:
+    if ctx.message.author.guild_permissions.change_nickname:
         if len(ctx.message.mentions) > 0 and len(arg) > 1:
             await ctx.message.mentions[0].edit(nick=arg.join(ctx.message.content.split(" ")[2:]))
             await ctx.message.channel.send(content="Le pseudo " + ctx.message.mentions[0].name + " a été changé par " + ctx.message.mentions[0].nick, delete_after=3)
@@ -119,8 +119,9 @@ async def nick(ctx, arg):
 @bot.command(pass_context=True)
 async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
-    await ctx.message.channel.send(embed=emc)
+    if ctx.message.author.guild_permissions.send_messages:
+        emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
+        await ctx.message.channel.send(embed=emc)
 
 
 @bot.command(pass_context=True)
