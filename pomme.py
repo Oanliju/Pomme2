@@ -71,6 +71,17 @@ async def non(ctx):
     e4 = discord.Embed(title="Non", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
+@bot.command(pass_context=True)
+async def vent(ctx, arg):
+    await ctx.message.channel.purge(limit=1)
+    ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion"]
+    await ctx.message.channel.send(embed=random.choice(ml))
+
+
+@bot.command(pass_context=True)
+async def test(ctx, arg):
+    await ctx.message.channel.purge(limit=1)
+    await ctx.message.channel.send("test")
 
 @bot.command(pass_context=True)
 async def coucou(ctx):
@@ -121,7 +132,7 @@ async def nick(ctx, arg):
 async def mc(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.send_messages:
-        emc = discord.Embed(title=arg, color=discord.Colour.dark_green())
+        emc = discord.Embed(description=arg, color=discord.Colour.dark_green())
         emc.set_author(name=ctx.message.author.name, icon_url=ctx.author.avatar_url)
         await ctx.message.channel.send(embed=emc)
 
@@ -202,19 +213,6 @@ async def youtube(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     e = discord.Embed(title="Voici votre recherche Youtube " + ctx.author.name + " : " + arg, description="[Youtube](https://www.youtube.com/results?search_query=" + arg + ")", colour=discord.Colour.dark_red())
     await ctx.message.channel.send(embed=e)
-    
-
-@bot.command(pass_context=True)
-async def vent(ctx, arg):
-    await ctx.message.channel.purge(limit=1)
-    ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion"]
-    await ctx.message.channel.send(embed=random.choice(ml))
-
-
-@bot.command(pass_context=True)
-async def test(ctx, arg):
-    await ctx.message.channel.purge(limit=1)
-    await ctx.message.channel.send("test")
 
 
 bot.run(os.getenv('TOKEN'))
