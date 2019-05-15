@@ -75,15 +75,16 @@ async def non(ctx):
 @bot.command(pass_context=True)
 async def Ah(ctx):
     await ctx.message.channel.purge(limit=1)
-    e4 = discord.Embed(title="Ah", colour=discord.Colour.dark_blue())
+    e4 = discord.Embed(title="Ah <:AH:577902395615477761>", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
 
 @bot.command(pass_context=True)
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
-    ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion"]
-    await ctx.message.channel.send(random.choice(ml))
+    e = discord.Embed(title="Wind levels", description=random.choice(ml))
+    ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion", "Ouragan"]
+    await ctx.message.channel.send(embed=e)
 
 
 @bot.command(pass_context=True)
