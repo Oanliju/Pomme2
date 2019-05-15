@@ -68,14 +68,14 @@ async def info(ctx):
 @bot.command(pass_context=True)
 async def non(ctx):
     await ctx.message.channel.purge(limit=1)
-    e4 = discord.Embed(title="Non", colour=discord.Colour.dark_blue())
+    e4 = discord.Embed(title="Non ! <:non:578130152140308481> ", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
 
 @bot.command(pass_context=True)
 async def Ah(ctx):
     await ctx.message.channel.purge(limit=1)
-    e4 = discord.Embed(title="Ah <:bi:578132869105451018>", colour=discord.Colour.dark_blue())
+    e4 = discord.Embed(title="Ah ! <:ah:578130126705917982> <:ah:578130126705917982> <:ah:578130126705917982>", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
 
