@@ -84,8 +84,8 @@ async def ah(ctx):
 @bot.command(pass_context=True)
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
-    e = discord.Embed(title="Wind levels", description=random.choice(ml))
     ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion", "Ouragan"]
+    e = discord.Embed(title="Wind levels", description=random.choice(ml))
     await ctx.message.channel.send(embed=e)
 
 
