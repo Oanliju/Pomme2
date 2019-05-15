@@ -76,7 +76,10 @@ async def non(ctx):
 async def Ah(ctx):
     await ctx.message.channel.purge(limit=1)
     e4 = discord.Embed(title="Ah", description=":AH::AH::AH:", colour=discord.Colour.dark_blue())
-    await ctx.message.channel.send(discord.Emoji(guild_id=577900904833875968, id=577902395615477761))
+    em = discord.Emoji()
+    em.guild_id(int(577900904833875968))
+    em.name(str(":AH:"))
+    await ctx.message.channel.send(embed=e4, content=em)
 
 
 @bot.command(pass_context=True)
