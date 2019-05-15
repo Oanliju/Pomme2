@@ -110,7 +110,7 @@ async def pdp(ctx):
     else:
         perso = ctx.author
     epdp = discord.Embed(title="Photo de profil", description="voici la photo de profil de" + perso.mention, colour=discord.Colour.orange())
-    epdp.set_image(url=perso.avatar_url)
+    epdp.set_image(url=perso.avatar_url + "?size=2048")
     await ctx.message.channel.send(embed=epdp)
 
 
