@@ -75,7 +75,7 @@ async def non(ctx):
 @bot.command(pass_context=True)
 async def Ah(ctx):
     await ctx.message.channel.purge(limit=1)
-    e4 = discord.Embed(title="Ah <:AH:577902395615477761>", colour=discord.Colour.dark_blue())
+    e4 = discord.Embed(title="Ah <:bi:578132869105451018>", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
 
