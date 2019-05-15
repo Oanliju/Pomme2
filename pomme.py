@@ -179,7 +179,7 @@ async def googame(ctx):
     e.add_field(name=bot.get_command(name="snake"), value="Un petit jeu snake", inline=False)
     e.add_field(name=bot.get_command(name="pacman"), value="PacMan PacMan PacMan !", inline=False)
     e.add_field(name=bot.get_command(name="atari_breakout"), value="Le célèbre breakout sur atari", inline=False)
-    e.add_field(name=bot.get_command(name="quiz_mc"), value="Un quizz sur minecraft", inline=False)
+    e.add_field(name=bot.get_command(name="quizz_mc"), value="Un quizz sur minecraft", inline=False)
     await ctx.message.channel.send(embed=e)
 
 
