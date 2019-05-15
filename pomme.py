@@ -85,6 +85,7 @@ async def ah(ctx):
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
     ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion", "Ouragan"]
+    color = [discord.Colour.blue(), discord.Colour.light_grey(), discord.Colour.dark_orange(), discord.Colour.gold(), discord.Colour.dark_purple(), discord.Colour.green()]
     e = discord.Embed(title="Wind levels", description=random.choice(ml))
     await ctx.message.channel.send(embed=e)
 
