@@ -27,6 +27,8 @@ async def help(ctx):
     e.add_field(name=bot.get_command(name="mc"), value='Dit la même chose que toi (mc = même chose)\n _Ps : Attention si votre msg a des espaces mettez des guillemets , ex : "Je vous aime"' , inline=False)
     e.add_field(name=bot.get_command(name="search"), value="Pour faire une recherche sur internet\n Ps : Attention les espaces entres les mots doivent être remplacer par des +", inline=False)
     e.add_field(name=bot.get_command(name="youtube"), value="Pour faire une recherche Youtube\n Ps : Attention les espaces entres les mots doivent être remplacer par des +", inline=False)
+    eg.add_field(name=bot.get_command(name="ah"), value="Ah !", inline=False)
+    eg.add_field(name=bot.get_command(name="vent"), value="Mesure le niveau du vent entre les messages", inline=False)
     em = discord.Embed(title="Liste des commandes modératrices :", colour=discord.Colour.dark_blue())
     em.add_field(name=bot.get_command(name="clean"), value="Efface les msg", inline=False)
     em.add_field(name=bot.get_command(name="nick"), value="Change le pseudo ", inline=False)
@@ -37,7 +39,7 @@ async def help(ctx):
     eg.add_field(name=bot.get_command(name="snake"), value="Un petit jeu snake", inline=False)
     eg.add_field(name=bot.get_command(name="pacman"), value="PacMan PacMan PacMan !", inline=False)
     eg.add_field(name=bot.get_command(name="atari_breakout"), value="Le célèbre breakout sur atari", inline=False)
-    eg.add_field(name=bot.get_command(name="quiz_mc"), value="Un quizz sur minecraft", inline=False)
+    eg.add_field(name=bot.get_command(name="quizz_mc"), value="Un quizz sur minecraft", inline=False)
     await ctx.message.channel.send(embed=e)
     await ctx.message.channel.send(embed=em)
     await ctx.message.channel.send(embed=eg)
@@ -73,7 +75,7 @@ async def non(ctx):
 
 
 @bot.command(pass_context=True)
-async def Ah(ctx):
+async def ah(ctx):
     await ctx.message.channel.purge(limit=1)
     e4 = discord.Embed(title="Ah ! <:ah:578130126705917982> <:ah:578130126705917982> <:ah:578130126705917982>", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
