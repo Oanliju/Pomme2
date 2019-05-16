@@ -10,7 +10,7 @@ bot.remove_command(name="help")
 @bot.event
 async def on_ready():
     print("PoDeTer a la pêche")
-    await bot.change_presence(activity=discord.Game(name="V1.2 | =help"))
+    await bot.change_presence(activity=discord.Game(name="V1.3 | =help"))
 
 
 @bot.command(pass_context=True)
@@ -85,8 +85,7 @@ async def ah(ctx):
 async def vent(ctx):
     await ctx.message.channel.purge(limit=1)
     ml = ["vent", "vent lvl 10", "vent lvl 100000", "Tornade", "Cyclone", "tourbillion", "Ouragan"]
-    color = [discord.Colour.blue(), discord.Colour.light_grey(), discord.Colour.dark_orange(), discord.Colour.gold(), discord.Colour.dark_purple(), discord.Colour.green()]
-    e = discord.Embed(title="Wind levels", description=random.choice(ml), colour=random.choice(color))
+    e = discord.Embed(title="Wind levels", description=random.choice(ml), colour=discord.Colour.light_grey())
     await ctx.message.channel.send(embed=e)
 
 
