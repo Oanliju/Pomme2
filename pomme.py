@@ -133,7 +133,7 @@ async def clean(ctx, arg):
 async def nick(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.change_nickname:
-        if len(ctx.message.mentions) > 0 and len(arg) > 1:
+        if len(ctx.message.mentions) > 0:
             await ctx.message.mentions[0].edit(nick=arg)
             await ctx.message.channel.send(content="Le pseudo " + ctx.message.mentions[0].name + " a été changé par " + ctx.message.mentions[0].nick, delete_after=3)
     else:
