@@ -8,9 +8,10 @@ bot.remove_command(name="help")
 
 
 @bot.event
-async def on_ready():
+async def on_ready(ctx):
     print("PoDeTer a la pêche")
     await bot.change_presence(activity=discord.Game(name="V1.3 | =help"))
+    await ctx.channel.send("J'ai la patate")
 
 
 @bot.command(pass_context=True)
@@ -129,24 +130,23 @@ async def clean(ctx, arg):
         ctx.message.channel.send("Dommage , vous n'avez pas les permissions")
 
 
+def to_upper(argument):
+    return argument.upper()
+
+@bot.command()
+async def up(ctx, *, content: to_upper):
+    await ctx.send(content)
+
+
 @bot.command(pass_context=True)
 async def nick(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.change_nickname:
         if len(ctx.message.mentions) > 0 and len(arg) > 1:
-            await ctx.message.mentions[0].edit(nick=arg.join(ctx.message.content.split(" ")[2:]))
-            await ctx.message.channel.send(content="Le pseudo " + ctx.message.mentions[0].name + " a été changé par " + ctx.message.mentions[0].nick, delete_after=3)
+            await ctx.message.mentions[0].edit(nick=arg)
+            await ctx.message.channel.send(content="Le pseudo de " + ctx.message.mentions[0].name + " a été changé par " + ctx.message.mentions[0].nick, delete_after=3)
     else:
         await ctx.message.channel.send("Vous n'avez pas les permissions !")
-
-
-@bot.command(pass_context=True)
-async def mc(ctx, arg):
-    await ctx.message.channel.purge(limit=1)
-    if ctx.message.author.guild_permissions.send_messages:
-        emc = discord.Embed(description="**" + arg + "**", color=discord.Colour.dark_green())
-        emc.set_author(name=ctx.message.author.name, icon_url=ctx.author.avatar_url)
-        await ctx.message.channel.send(embed=emc)
 
 
 @bot.command(pass_context=True)
