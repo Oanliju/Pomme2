@@ -12,6 +12,13 @@ async def on_ready(ctx):
     print("PoDeTer a la pêche")
     await bot.change_presence(activity=discord.Game(name="V1.4 | =help"))
 
+
+@bot.command()
+async def testos(ctx, members: commands.Greedy[discord.Member], *, reason='no reason'):
+    slapped = ", ".join(jean.name for jean in members)
+    await ctx.send('{} beéizrbzvfbeh {}'.format(slapped, reason))
+
+
 @bot.command(pass_context=True)
 async def help(ctx):
     await ctx.message.channel.purge(limit=1)
