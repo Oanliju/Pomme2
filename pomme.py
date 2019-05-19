@@ -12,11 +12,6 @@ async def on_ready(ctx):
     print("PoDeTer a la pêche")
     await bot.change_presence(activity=discord.Game(name="V1.4 | =help"))
 
-
-@bot.command(pass_context=True)
-async def quit():
-    await bot.logout()
-
 @bot.command(pass_context=True)
 async def help(ctx):
     await ctx.message.channel.purge(limit=1)
@@ -148,7 +143,7 @@ async def nick(ctx, argument):
 async def rb(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     if ctx.author.name == "Oanliju":
-        emc = discord.Embed(description="**" + arg[2] + "**", color=discord.Colour.dark_blue())
+        emc = discord.Embed(description="**" + arg + "**", color=discord.Colour.dark_blue())
         await ctx.message.channel.send(embed=emc)
 
 
