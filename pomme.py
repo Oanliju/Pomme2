@@ -12,13 +12,6 @@ async def on_ready(ctx):
     print("PoDeTer a la pêche")
     await bot.change_presence(activity=discord.Game(name="V1.4 | =help"))
 
-
-@bot.command()
-async def testos(ctx, members: commands.Greedy[discord.Member], *, reason='no reason'):
-    slapped = ctx.Jean.edit(nick=", ".join(jean.name for jean in members))
-    await ctx.send('{} fefrfrfrfrfr {}'.format(slapped, reason))
-
-
 @bot.command(pass_context=True)
 async def help(ctx):
     await ctx.message.channel.purge(limit=1)
@@ -136,11 +129,11 @@ async def clean(ctx, arg):
 
 
 @bot.command(pass_context=True)
-async def nick(ctx, argument):
+async def nick(ctx, arg2:
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.change_nickname:
-        if len(ctx.message.mentions) > 0 and len(argument) > 1:
-            await ctx.message.mentions[0].edit(nick=argument)
+        if len(ctx.message.mentions) > 0 and len(arg2) > 1:
+            await ctx.message.mentions[0].edit(nick=arg2)
             await ctx.message.channel.send(content="Le pseudo de " + ctx.message.mentions[0].name + " a été changé par " + ctx.message.mentions[0].nick, delete_after=3)
     else:
         await ctx.message.channel.send("Vous n'avez pas les permissions !")
