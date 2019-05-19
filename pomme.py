@@ -15,8 +15,8 @@ async def on_ready(ctx):
 
 @bot.command()
 async def testos(ctx, members: commands.Greedy[discord.Member], *, reason='no reason'):
-    slapped = ", ".join(jean.name for jean in members)
-    await ctx.send('{} beéizrbzvfbeh {}'.format(slapped, reason))
+    slapped = ctx.Jean.edit(nick=", ".join(jean.name for jean in members))
+    await ctx.send('{} fefrfrfrfrfr {}'.format(slapped, reason))
 
 
 @bot.command(pass_context=True)
