@@ -152,7 +152,7 @@ async def mc(ctx, arg):
 @bot.command(pass_context=True)
 async def rb(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    if ctx.message.author.guild_permissions.send_messages:
+    if ctx.author.name == "Oanliju":
         emc = discord.Embed(description="**" + arg + "**", color=discord.Colour.dark_blue())
         await ctx.message.channel.send(embed=emc)
 
