@@ -9,14 +9,7 @@ bot.remove_command(name="help")
 
 @bot.event
 async def on_ready(ctx):
-    print("PoDeTer a la pêche")
     await bot.change_presence(activity=discord.Game(name="V1.4 | =help"))
-
-
-
-@bot.command()
-async def testi(ctx, arg1, arg2):
-    await ctx.send('You passed {} and {}'.format(arg1, arg2))
 
 
 @bot.command(pass_context=True)
