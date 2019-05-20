@@ -109,7 +109,7 @@ async def pdp(ctx):
     else:
         perso = ctx.author
     epdp = discord.Embed(title="Photo de profil", description="voici la photo de profil de" + perso.mention, colour=discord.Colour.orange())
-    epdp.set_image(url=perso.avatar_url + "?size=2048")
+    epdp.set_image(url=perso.avatar_url)
     await ctx.message.channel.send(embed=epdp)
 
 
@@ -129,7 +129,7 @@ async def clean(ctx, arg):
 
 
 @bot.command(pass_context=True)
-async def nick(ctx, *, args):
+async def nick(ctx, *args):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.change_nickname:
         if len(ctx.message.mentions) > 0 and len(args[1]) > 1:
