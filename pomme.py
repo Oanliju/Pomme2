@@ -148,13 +148,13 @@ async def rb(ctx, arg):
 
 
 @bot.command(pass_context=True)
-async def ban(ctx, arg):
+async def ban(ctx):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.ban_members or ctx.message.author.guild_permissions.administrator:
         if len(ctx.message.mentions) > 0:
             if ctx.message.mentions[0].dm_channel == None:
                 await ctx.message.mentions[0].create_dm()
-            await ctx.message.mentions[0].dm_channel.send("Vous avez été banni de " + ctx.message.guild.name + " par " + ctx.message.author + " La raison de votre ban est " + arg[1])
+            await ctx.message.mentions[0].dm_channel.send("Vous avez été banni de " + ctx.message.guild.name + " par " + ctx.message.author)
     await ctx.message.mentions[0].ban()
 
 
