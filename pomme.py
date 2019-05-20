@@ -13,12 +13,6 @@ async def on_ready(ctx):
 
 
 @bot.command(pass_context=True)
-async def presence(ctx, arg):
-    await ctx.message.channel.purge(limit=1)
-    await bot.change_presence(activity=discord.Game(name=arg))
-
-
-@bot.command(pass_context=True)
 async def help(ctx):
     await ctx.message.channel.purge(limit=1)
     ecolor = discord.Colour(value=0xc27c0e)
@@ -156,7 +150,7 @@ async def rb(ctx, arg):
 @bot.command(pass_context=True)
 async def ban(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    if ctx.message.author.guild_permissions.ban_members:
+    if ctx.message.author.guild_permissions.ban_members or ctx.message.author.guild_permissions.administrator:
         if len(ctx.message.mentions) > 0:
             if ctx.message.mentions[0].dm_channel == None:
                 await ctx.message.mentions[0].create_dm()
@@ -167,7 +161,7 @@ async def ban(ctx, arg):
 @bot.command(pass_context=True)
 async def kick(ctx):
     await ctx.message.channel.purge(limit=1)
-    if ctx.message.author.guild_permissions.kick_members:
+    if ctx.message.author.guild_permissions.kick_members or ctx.message.author.guild_permissions.administrator:
         if len(ctx.message.mentions) > 0:
             membrek2 = ctx.message.mentions[0]
             if membrek2.dm_channel == None:
