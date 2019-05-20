@@ -13,6 +13,12 @@ async def on_ready(ctx):
 
 
 @bot.command(pass_context=True)
+async def presence(ctx, arg):
+    await ctx.message.channel.purge(limit=1)
+    await bot.change_presence(activity=discord.Game(name=arg))
+
+
+@bot.command(pass_context=True)
 async def help(ctx):
     await ctx.message.channel.purge(limit=1)
     ecolor = discord.Colour(value=0xc27c0e)
