@@ -226,4 +226,4 @@ async def youtube(ctx, arg):
     e = discord.Embed(title="Voici votre recherche Youtube " + ctx.author.name + " : " + arg, description="[Youtube](https://www.youtube.com/results?search_query=" + arg + ")", colour=discord.Colour.dark_red())
     await ctx.message.channel.send(embed=e)
 
-bot.run(os.getenv('TOKEN'))
+bot.run(os.getenv('TOKE'))
