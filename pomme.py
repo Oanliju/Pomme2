@@ -23,7 +23,6 @@ async def help(ctx):
     e.add_field(name=bot.get_command(name="coucou"), value="Dit coucou a tout le monde", inline=False)
     e.add_field(name=bot.get_command(name="non"), value="Dit non", inline=False)
     e.add_field(name=bot.get_command(name="pdp"), value="Donne la photo de profil", inline=False)
-    e.add_field(name=bot.get_command(name="mc"), value='Dit la même chose que toi (mc = même chose)\n _Ps : Attention si votre msg a des espaces mettez des guillemets , ex : "Je vous aime"' , inline=False)
     e.add_field(name=bot.get_command(name="search"), value="Pour faire une recherche sur internet\n Ps : Attention les espaces entres les mots doivent être remplacer par des +", inline=False)
     e.add_field(name=bot.get_command(name="youtube"), value="Pour faire une recherche Youtube\n Ps : Attention les espaces entres les mots doivent être remplacer par des +", inline=False)
     e.add_field(name=bot.get_command(name="ah"), value="Ah !", inline=False)
