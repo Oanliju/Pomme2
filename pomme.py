@@ -6,12 +6,10 @@ import random
 bot = commands.Bot(commands.when_mentioned_or('='))
 bot.remove_command(name="help")
 
-)))
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name="V1.4 | =help"))
 
-    )))
 @bot.command(pass_context=True)
 async def help(ctx):
     await ctx.message.channel.purge(limit=1)
@@ -214,10 +212,13 @@ async def quizz_mc(ctx):
 @bot.command(pass_context=True)
 async def search(ctx, *, args):
     await ctx.message.channel.purge(limit=1)
+    a = str("[Google](https://www.google.com/search?client=firefox-b-d&q=" + args + ")")
+    b = str("[Bing](https://www.bing.com/search?q=" + args + ")")
     e = discord.Embed(title="Voici votre recherche Internet " + ctx.author.name + " : " + args, colour=discord.Colour.dark_teal())
-    e.add_field(name="Google :", value="[Google](https://www.google.com/search?client=firefox-b-d&q=" + args + ")".replace(" ", "+"), inline=False)
-    e.add_field(name="Bing :", value="[Bing](https://www.bing.com/search?q=" + args + ")".replace(" ", "+"), inline=False)
+    e.add_field(name="Google :", value=a.replace(" ", "+"), inline=False)
+    e.add_field(name="Bing :", value=b.replace(" ", "+"), inline=False)
     await ctx.message.channel.send(embed=e)
+
 
 
 @bot.command(pass_context=True)
@@ -226,3 +227,4 @@ async def youtube(ctx, arg):
     e = discord.Embed(title="Voici votre recherche Youtube " + ctx.author.name + " : " + arg, description="[Youtube](https://www.youtube.com/results?search_query=" + arg + ")", colour=discord.Colour.dark_red())
     await ctx.message.channel.send(embed=e)
 
+bot.run(getenv('TOKEN'))
