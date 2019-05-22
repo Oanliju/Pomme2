@@ -214,7 +214,7 @@ async def quizz_mc(ctx):
 async def search(ctx, arg):
     await ctx.message.channel.purge(limit=1)
     e = discord.Embed(title="Voici votre recherche Internet " + ctx.author.name + " : " + arg, colour=discord.Colour.dark_teal())
-    e.add_field(name="Google :", value="[Google](https://www.google.com/search?client=firefox-b-d&q=" + arg + ")", inline=False)
+    e.add_field(name="Google :", value="[Google](https://www.google.com/search?client=firefox-b-d&q=" + arg + ")".replace(" ", "+"), inline=False)
     e.add_field(name="Bing :", value="[Bing](https://www.bing.com/search?q=" + arg + ")", inline=False)
     await ctx.message.channel.send(embed=e)
 
