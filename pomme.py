@@ -155,6 +155,7 @@ async def ban(ctx):
             membre = ctx.message.mentions[0]
             if membre.dm_channel == None:
                 await membre.create_dm()
+            await ctx.send("L'utilisateur : " + membre.name + "a été banni avec succès")
             await membre.dm_channel.send("Vous avez été banni de " + ctx.message.guild.name + " par " + ctx.message.author.name)
     await membre.ban()
 
@@ -167,6 +168,7 @@ async def kick(ctx):
             membrek2 = ctx.message.mentions[0]
             if membrek2.dm_channel == None:
                 await membrek2.create_dm()
+            await ctx.send("L'utilisateur : " + membre.name + "a été kick avec succès")
             await membrek2.dm_channel.send("Vous avez été kické de " + ctx.message.guild.name + " par " + ctx.message.author.name)
     await membrek2.kick()
 
