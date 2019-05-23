@@ -76,6 +76,7 @@ async def ex(ctx):
     await ctx.message.channel.purge(limit=1)
     time.sleep(2.0)
     await ctx.message.channel.send("Je t'es fait peur ?")
+    await ctx.message.channel.send("C'est une blague hein mon script c'est juste écrire un msg puis l'effacer")
 
 @bot.command(pass_context=True)
 async def info(ctx):
