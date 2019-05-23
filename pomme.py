@@ -126,7 +126,7 @@ async def clean(ctx, arg):
 
 
 @bot.command(pass_context=True)
-async def nick(ctx, *, args):
+async def nick(ctx, *, *args):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.change_nickname:
         if len(ctx.message.mentions) > 0 and len(args[1]) > 1:
