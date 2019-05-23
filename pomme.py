@@ -49,6 +49,13 @@ async def pomme(ctx):
     e1 = discord.Embed(title="De terre", colour=pommecolor)
     await ctx.message.channel.send(embed=e1)
 
+@bot.command(pass_context=True)
+async def explosion(ctx):
+    a = 0
+    await ctx.message.channel.purge(limit=1)
+    while a <= 100:
+        ctx.send("Boom")
+        a += 1
 
 @bot.command(pass_context=True)
 async def info(ctx):
