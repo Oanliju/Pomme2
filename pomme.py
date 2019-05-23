@@ -50,12 +50,11 @@ async def pomme(ctx):
     await ctx.message.channel.send(embed=e1)
 
 @bot.command(pass_context=True)
-async def explosion(ctx):
+async def ex(ctx):
     a = 0
-    await ctx.message.channel.purge(limit=1)
     while a <= 100:
         ctx.message.channel.send("Boom")
-        a = a + 1
+        a += 1
 
 @bot.command(pass_context=True)
 async def info(ctx):
