@@ -54,8 +54,8 @@ async def explosion(ctx):
     a = 0
     await ctx.message.channel.purge(limit=1)
     while a <= 100:
-        ctx.send("Boom")
-        a += 1
+        ctx.message.channel.send("Boom")
+        a = a + 1
 
 @bot.command(pass_context=True)
 async def info(ctx):
