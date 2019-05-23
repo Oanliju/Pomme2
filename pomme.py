@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import random
+import time
 
 bot = commands.Bot(commands.when_mentioned_or('='))
 bot.remove_command(name="help")
@@ -51,10 +52,29 @@ async def pomme(ctx):
 
 @bot.command(pass_context=True)
 async def ex(ctx):
-    a = 0
-    while a <= 100:
-        ctx.message.channel.send("Boom")
-        a += 1
+    ctx.send("Hackage en cours ...")
+    time.sleep(2.0)
+    ctx.send("...")
+    time.sleep(1.0)
+    ctx.purge(limit=1)
+    time.sleep(2.0)
+    ctx.send("...")
+    time.sleep(1.0)
+    ctx.purge(limit=1)
+    time.sleep(2.0)
+    ctx.send("...")
+    time.sleep(1.0)
+    ctx.purge(limit=1)
+    time.sleep(2.0)
+    ctx.send("bOOOM")
+    time.sleep(1.0)
+    ctx.purge(limit=1)
+    time.sleep(2.0)
+    ctx.send("bOOOM")
+    time.sleep(1.0)
+    ctx.purge(limit=1)
+    time.sleep(2.0)
+    ctx.send("Je t'es fait peur ?")
 
 @bot.command(pass_context=True)
 async def info(ctx):
