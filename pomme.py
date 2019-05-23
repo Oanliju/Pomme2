@@ -210,13 +210,11 @@ async def quizz_mc(ctx):
 
 
 @bot.command(pass_context=True)
-async def search(ctx, *, args):
+async def search(ctx, arg):
     await ctx.message.channel.purge(limit=1)
-    a = str("[Google](https://www.google.com/search?client=firefox-b-d&q=" + args + ")")
-    b = str("[Bing](https://www.bing.com/search?q=" + args + ")")
     e = discord.Embed(title="Voici votre recherche Internet " + ctx.author.name + " : " + args, colour=discord.Colour.dark_teal())
-    e.add_field(name="Google :", value=a.replace(" ", "+"), inline=False)
-    e.add_field(name="Bing :", value=b.replace(" ", "+"), inline=False)
+    e.add_field(name="Google :", value="[Google](https://www.google.com/search?client=firefox-b-d&q=" + arg + ")", inline=False)
+    e.add_field(name="Bing :", value="[Bing](https://www.bing.com/search?q=" + arg + ")", inline=False)
     await ctx.message.channel.send(embed=e)
 
 
