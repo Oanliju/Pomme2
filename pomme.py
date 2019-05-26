@@ -12,7 +12,7 @@ async def on_ready():
     activity = discord.Activity
     activity.name("V 1.5 | =help")
     activity.type(Watching)
-    await bot.change_presence(activity=activity, status=discord.Status.dnd)
+    await bot.change_presence(activity=activity, status=discord.Status.idle)
 
 @bot.command(pass_context=True)
 async def help(ctx):
