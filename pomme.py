@@ -9,8 +9,10 @@ bot.remove_command(name="help")
 
 @bot.event
 async def on_ready():
-    activity = discord.Activity(name="V 1.5 | =help")
-    await bot.change_presence(activity=activity, status=discord.Status.idle)
+    activity = discord.Activity
+    activity.name("V 1.5 | =help")
+    activity.type(Watching)
+    await bot.change_presence(activity=activity, status=discord.Status.dnd)
 
 @bot.command(pass_context=True)
 async def help(ctx):
