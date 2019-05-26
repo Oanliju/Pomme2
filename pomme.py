@@ -172,8 +172,18 @@ async def ban(ctx):
                 await membre.create_dm()
             await ctx.send("L'utilisateur : " + membre.name + "a été banni avec succès")
             await membre.dm_channel.send("Vous avez été banni de " + ctx.message.guild.name + " par " + ctx.message.author.name)
-    await membre.ban()
+            await membre.ban()
 
+@bot.command(pass_context=True)
+async def mute(ctx):
+    await ctx.message.channel.purge(limit=1)
+    if ctx.message.author.guild_permissions.mute_members or ctx.message.author.guild_permissions.administrator:
+        if len(ctx.message.mentions) > 0:
+            membre = ctx.message.mentions[0]
+            guild = ctx.guild
+            role = guild.create_role(name="PoDeMute")
+            membre.add_roles(roles=role.id)
+            ctx.send("Réussi")
 
 @bot.command(pass_context=True)
 async def kick(ctx):
@@ -185,7 +195,7 @@ async def kick(ctx):
                 await membrek2.create_dm()
             await ctx.send("L'utilisateur : " + membre.name + "a été kick avec succès")
             await membrek2.dm_channel.send("Vous avez été kické de " + ctx.message.guild.name + " par " + ctx.message.author.name)
-    await membrek2.kick()
+            await membrek2.kick()
 
 
 @bot.command(pass_context=True)
