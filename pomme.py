@@ -179,10 +179,8 @@ async def mute(ctx):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.mute_members or ctx.message.author.guild_permissions.administrator:
         if len(ctx.message.mentions) > 0:
-            membre = ctx.message.mentions[0]
             guild = ctx.guild
-            role = guild.create_role(name="PoDeMute")
-            membre.add_roles(roles=role.id)
+            guild.create_role(name="PoDeMute")
             ctx.send("Réussi")
 
 @bot.command(pass_context=True)
