@@ -6,13 +6,13 @@ import time
 
 bot = commands.Bot(commands.when_mentioned_or('='))
 bot.remove_command(name="help")
-activity = discord.Activity
-activity.name("V 1.5 | =help")
-activity.type(watching)
 
 
 @bot.event
 async def on_ready():
+    activity = discord.Activity
+    activity.name("V 1.5 | =help")
+    activity.type(watching)
     await bot.change_presence(activity=activity, status=discord.Status.idle)
 
 @bot.command(pass_context=True)
