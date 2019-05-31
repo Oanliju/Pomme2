@@ -54,7 +54,7 @@ async def pomme(ctx):
 
 @bot.command(pass_context=True)
 async def ortho(ctx):
-    e1 = discord.Embed(title="Apprendre a écrire", colour=discord.Colour.gold())
+    e1 = discord.Embed(title="**Apprendre a écrire**", colour=discord.Colour.gold())
     e1.add_field(name="Dictionnaire", value="[LaRousse](https://www.larousse.fr/dictionnaires/francais-monolingue)", inline=False)
     e1.add_field(name="Apprendre a écrire", value="[Niv Maternelle / Cp](https://www.youtube.com/watch?v=FwGaIYqL1zE)", inline=False)
     await ctx.message.channel.send(embed=e1)
