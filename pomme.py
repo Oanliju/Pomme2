@@ -3,9 +3,9 @@ from discord.ext import commands
 import os
 import random
 import time
+import json
 
-bot = commands.Bot
-préfix = bot(commands.when_mentioned_or('='))
+bot = commands.Bot(commands.when_mentioned_or('='))
 bot.remove_command(name="help")
 
 
