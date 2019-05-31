@@ -4,7 +4,8 @@ import os
 import random
 import time
 
-bot = commands.Bot(commands.when_mentioned_or('='))
+bot = commands.Bot
+préfix = bot(commands.when_mentioned_or('='))
 bot.remove_command(name="help")
 
 
