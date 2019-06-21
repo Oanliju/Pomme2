@@ -171,7 +171,7 @@ async def rb(ctx, *, args):
         await ctx.message.channel.send(embed=emc)
 
 @bot.command(pass_context=True)
-async def o(ctx, *, args):
+async def t(ctx, *, args):
     await ctx.message.channel.purge(limit=1)
     if ctx.author.name == "Oanliju":
         emc = discord.Embed(description="**" + args + "**", color=discord.Colour.dark_blue())
