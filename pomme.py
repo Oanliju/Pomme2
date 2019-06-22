@@ -11,7 +11,7 @@ bot.remove_command(name="help")
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name="V 1.5 | =help"), status=discord.Status.idle)
+    await bot.change_presence(activity=discord.Game(name="V 1.6 | =help"), status=discord.Status.idle)
 
 @bot.command(pass_context=True)
 async def help(ctx):
@@ -59,23 +59,6 @@ async def ortho(ctx):
     e1.add_field(name="Apprendre a écrire", value="[Niv Maternelle / Cp](https://www.youtube.com/watch?v=FwGaIYqL1zE)", inline=False)
     await ctx.message.channel.send(embed=e1)
 
-@bot.command(pass_context=True)
-async def ex(ctx):
-    await ctx.message.channel.purge(limit=1)
-    await ctx.message.channel.send("Hackage en cours ...")
-    time.sleep(2.0)
-    await ctx.message.channel.send("...")
-    time.sleep(2.0)
-    await ctx.message.channel.send("...")
-    time.sleep(2.0)
-    await ctx.message.channel.send("...")
-    time.sleep(2.0)
-    await ctx.message.channel.send("BOOOM")
-    time.sleep(2.0)
-    await ctx.message.channel.send("BOOOM")
-    time.sleep(2.0)
-    await ctx.message.channel.send("Je t'es fait peur ?")
-    await ctx.message.channel.send("C'est une blague hein mon script c'est juste écrire un msg puis l'effacer")
 
 @bot.command(pass_context=True)
 async def info(ctx):
@@ -100,7 +83,7 @@ async def non(ctx):
 @bot.command(pass_context=True)
 async def ah(ctx):
     await ctx.message.channel.purge(limit=1)
-    e4 = discord.Embed(title="Ah ! <:ah:578130126705917982> <:ah:578130126705917982> <:ah:578130126705917982>", colour=discord.Colour.dark_blue())
+    e4 = discord.Embed(title="Ah ! <:ah:578130126705917982> ", colour=discord.Colour.dark_blue())
     await ctx.message.channel.send(embed=e4)
 
 
@@ -121,7 +104,7 @@ async def test(ctx):
 @bot.command(pass_context=True)
 async def coucou(ctx):
     await ctx.message.channel.purge(limit=1)
-    e3 = discord.Embed(title="COUCOU", description="Tout le monde", colour=discord.Colour.greyple())
+    e3 = discord.Embed(title="COUCOU", colour=discord.Colour.greyple())
     await ctx.message.channel.send(embed=e3)
     
 
@@ -171,16 +154,6 @@ async def rb(ctx, *, args):
         await ctx.message.channel.send(embed=emc)
 
 @bot.command(pass_context=True)
-async def t(ctx, *, args):
-    await ctx.message.channel.purge(limit=1)
-    if ctx.author.name == "Oanliju":
-        emc = discord.Embed(description="**" + args + "**", color=discord.Colour.dark_blue())
-        jip = 1
-        while jip <= 100:
-            await ctx.message.channel.send(embed=emc)
-            jip = jip + 1
-
-@bot.command(pass_context=True)
 async def ban(ctx):
     await ctx.message.channel.purge(limit=1)
     if ctx.message.author.guild_permissions.ban_members or ctx.message.author.guild_permissions.administrator:
@@ -192,14 +165,6 @@ async def ban(ctx):
             await membre.dm_channel.send("Vous avez été banni de " + ctx.message.guild.name + " par " + ctx.message.author.name)
             await membre.ban()
 
-@bot.command(pass_context=True)
-async def mute(ctx):
-    await ctx.message.channel.purge(limit=1)
-    if ctx.message.author.guild_permissions.mute_members or ctx.message.author.guild_permissions.administrator:
-        if len(ctx.message.mentions) > 0:
-            guild = ctx.guild
-            guild.create_role(name="PoDeMute")
-            ctx.send("Réussi")
 
 @bot.command(pass_context=True)
 async def kick(ctx):
